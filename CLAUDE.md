@@ -34,7 +34,28 @@ Frontend Capstone is a React application scaffolded with Vite and styled with Ta
 - Extract repeated class combinations into reusable components rather than duplicating long class strings
 - Keep custom CSS minimal; place global styles in the main CSS entry file if needed
 
-### Folder Structure
+### File Naming Conventions
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Components | `PascalCase.jsx` | `UserCard.jsx` |
+| Pages | `PascalCase.jsx` | `Dashboard.jsx` |
+| Hooks | `use` + `PascalCase.js` | `useAuth.js` |
+| Utilities | `camelCase.js` | `formatDate.js` |
+| Assets | `kebab-case.ext` | `hero-banner.png` |
+
+Use `.jsx` for files that contain JSX; `.js` for hooks and pure utilities.
+
+### Component Naming Conventions
+
+- Match the file name: `UserCard.jsx` exports `UserCard`
+- Use **PascalCase** for component names; **camelCase** for functions and variables
+- Prefix event handlers with `handle` (`handleSubmit`, `handleClose`)
+- Prefix boolean props with `is` or `has` (`isLoading`, `hasError`)
+- Prefix custom hooks with `use` (`useAuth`, `useLocalStorage`)
+- Prefer named exports; reserve default exports for page/route entry points
+
+### Folder Organization Guidelines
 
 ```
 src/
@@ -48,9 +69,11 @@ src/
 └── main.jsx      # Entry point
 ```
 
-- Colocate component-specific helpers near the component when they are not reused elsewhere
-- Move shared logic to `hooks/` or `utils/` when used in multiple places
-- Name files in PascalCase for components (`Button.jsx`) and camelCase for hooks/utilities (`useAuth.js`, `formatDate.js`)
+- Group by **type** at the top level (`components/`, `hooks/`, `pages/`)
+- Nest feature-specific code under a named folder only when a feature has multiple related files (e.g., `components/auth/LoginForm.jsx`)
+- Colocate private helpers with their component; promote to `hooks/` or `utils/` when reused elsewhere
+- Keep nesting shallow — prefer flat folders over deep hierarchies
+- Do not create empty folders ahead of need
 
 ### Git Commits
 
