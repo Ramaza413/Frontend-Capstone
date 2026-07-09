@@ -12,8 +12,15 @@ A modern frontend capstone project built with React, Vite, and Tailwind CSS.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- npm (included with Node.js)
+- [Node.js](https://nodejs.org/) **20.x** or **22.x** (Active LTS)
+- npm **10+** (included with Node.js)
+
+Verify your environment before installing dependencies:
+
+```bash
+node -v   # expected: v20.x.x or v22.x.x
+npm -v    # expected: 10.x.x or higher
+```
 
 ## Getting Started
 
