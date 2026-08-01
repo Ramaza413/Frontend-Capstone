@@ -1,89 +1,36 @@
-# Frontend Capstone
-
-A modern frontend capstone project built with React, Vite, and Tailwind CSS.
-
-## Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| [React](https://react.dev/) | UI library |
-| [Vite](https://vite.dev/) | Build tool and dev server |
-| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) **20.x** or **22.x** (Active LTS)
-- npm **10+** (included with Node.js)
-
-Verify your environment before installing dependencies:
-
-```bash
-node -v   # expected: v20.x.x or v22.x.x
-npm -v    # expected: 10.x.x or higher
-```
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-> Application scaffolding has not been generated yet. Once the project is initialized with Vite, use the steps below.
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start the development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview the production build
-npm run preview
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Project Structure
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-Frontend-Capstone/
-├── public/              # Static assets
-├── src/
-│   ├── assets/          # Images, fonts, and other media
-│   ├── components/      # Reusable UI components
-│   ├── hooks/           # Custom React hooks
-│   ├── pages/           # Route-level page components
-│   ├── utils/           # Helper functions and constants
-│   ├── App.jsx          # Root application component
-│   └── main.jsx         # Application entry point
-├── index.html
-├── package.json
-├── vite.config.js
-└── tailwind.config.js
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Coding Conventions
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Components** — Functional components only; no class components
-- **JavaScript** — ES6+ syntax (arrow functions, destructuring, modules, etc.)
-- **Structure** — Keep a clean, feature-oriented folder layout
-- **Commits** — Follow [Conventional Commits](https://www.conventionalcommits.org/)
+## Learn More
 
-### Commit Message Format
+To learn more about Next.js, take a look at the following resources:
 
-```
-<type>(<optional scope>): <description>
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-[optional body]
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+## Deploy on Vercel
 
-Examples:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```
-feat(auth): add login form validation
-fix(navbar): correct mobile menu toggle state
-docs: update README setup instructions
-```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
