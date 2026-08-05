@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## AI Tools
+
+### `queryMetric`
+Fetches historical daily values for a SaaS metric.
+
+**Schema (input):**
+| field  | type                                  | required | description                        |
+|--------|---------------------------------------|----------|------------------------------------|
+| metric | enum: "mrr" \| "activeUsers" \| "churnRate" | yes      | which metric to query              |
+| days   | number (1–30, default 7)             | no       | how many recent days to return     |
+
+**Return shape:**
+```ts
+{
+  metric: string;
+  points: { date: string; value: number }[];
+  average: number;
+  trend: "up" | "down";
+}
+```
+
+**Error case:** requesting `days > 25` throws, demonstrating the tool's designed error state in the UI.
