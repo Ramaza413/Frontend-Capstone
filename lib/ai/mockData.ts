@@ -79,6 +79,7 @@ export type UserRow = {
   name: string;
   email: string;
   plan: "Starter" | "Growth" | "Scale" | "Enterprise";
+  role: "Admin" | "Editor" | "Viewer";
   status: "Active" | "Invited" | "Suspended";
   joined: string;
 };
@@ -87,6 +88,7 @@ const NAMES = [
   "Ayesha Khan", "Bilal Ahmed", "Sara Malik", "Usman Tariq", "Hina Raza",
   "Zain Abbas", "Mahnoor Iqbal", "Hamza Sheikh", "Areeba Noor", "Fahad Riaz",
 ];
+const ROLES: UserRow["role"][] = ["Admin", "Editor", "Viewer"];
 
 export function getUserRows(count = 10): UserRow[] {
   return Array.from({ length: count }, (_, i) => ({
@@ -94,6 +96,7 @@ export function getUserRows(count = 10): UserRow[] {
     name: NAMES[i % NAMES.length],
     email: `${NAMES[i % NAMES.length].toLowerCase().replace(" ", ".")}@example.com`,
     plan: PLANS[i % PLANS.length],
+    role: ROLES[i % ROLES.length],
     status: i % 7 === 0 ? "Suspended" : i % 4 === 0 ? "Invited" : "Active",
     joined: `2026-0${(i % 8) + 1}-1${i % 9}`,
   }));
