@@ -69,6 +69,9 @@ export default function AnalyticsChat() {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
+        role="log"
+        aria-live="polite"
+        aria-label="Conversation with analytics assistant"
         className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-3"
       >
         {/* Designed empty state — onboarding, not apology */}
@@ -157,6 +160,7 @@ export default function AnalyticsChat() {
               <div className="h-2.5 bg-slate-200 rounded animate-pulse w-full" />
               <div className="h-2.5 bg-slate-200 rounded animate-pulse w-3/4" />
             </div>
+            <span className="sr-only">Assistant is responding…</span>
           </div>
         )}
 
@@ -200,11 +204,13 @@ export default function AnalyticsChat() {
           onKeyDown={(e) => e.key === "Enter" && handleSend()}
           disabled={isStreaming}
           placeholder="Ask about your metrics…"
+          aria-label="Ask a question about your metrics"
           className="flex-1 rounded-lg px-3 py-2 text-base sm:text-sm bg-white text-slate-900 placeholder-slate-400 border border-slate-300 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
         {isStreaming ? (
           <button
             onClick={stop}
+            aria-label="Stop response"
             className="px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-medium shrink-0"
           >
             Stop
@@ -213,6 +219,7 @@ export default function AnalyticsChat() {
           <button
             onClick={() => handleSend()}
             disabled={!input.trim()}
+            aria-label="Send message"
             className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium disabled:opacity-40 shrink-0"
           >
             Send
